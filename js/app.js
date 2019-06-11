@@ -15,7 +15,12 @@ var pike = {
         return Math.floor(this.generateRandom(this.minCust, this.maxCust)* this.avgCookie)
     },    
 
-    render: function () {
+    render: function () { 
+        var divElement = document.getElementById("store");
+        var newTitle = document.createElement("h2");
+        divElement.appendChild(newTitle);
+
+
       for (var i=0; i < times.length; i++ ) {
         console.log(`${times[i]}: ${this.cookiesPerHour()}`)
       }
