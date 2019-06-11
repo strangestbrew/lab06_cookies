@@ -10,7 +10,6 @@ var pike = {
     avgCookie: 6.3,
     totalCookies: 0,
 
-
      generateRandom: function(min, max) {
         return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
     },
@@ -52,6 +51,7 @@ console.log(pike.cookiesPerHour(), 'cookiesPerHour');
 
 pike.render();
 
+
 //SeaTac Airport Location
 var seaTac = {
     name: ('SeaTac Airport'),
@@ -59,7 +59,6 @@ var seaTac = {
     maxCust: 24,
     avgCookie: 1.2,
     totalCookies: 0,
-
 
      generateRandom: function(min, max) {
         return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
@@ -102,6 +101,7 @@ console.log(seaTac.cookiesPerHour(), 'cookiesPerHour');
 
 seaTac.render();
 
+
 //Seattle Center Location
 var seattleCenter = {
     name: ('Seattle Center'),
@@ -109,7 +109,6 @@ var seattleCenter = {
     maxCust: 38,
     avgCookie: 3.7,
     totalCookies: 0,
-
 
      generateRandom: function(min, max) {
         return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
@@ -145,12 +144,12 @@ var seattleCenter = {
        
     }
 }
-
 console.log(seattleCenter.generateRandom (seattleCenter.minCust, seattleCenter.maxCust), 'generateRandom');
 
 console.log(seattleCenter.cookiesPerHour(), 'cookiesPerHour');
 
 seattleCenter.render();
+
 
 //Capitol Hill Location
 var capHill = {
@@ -159,7 +158,6 @@ var capHill = {
     maxCust: 38,
     avgCookie: 2.3,
     totalCookies: 0,
-
 
      generateRandom: function(min, max) {
         return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
@@ -202,6 +200,7 @@ console.log(capHill.cookiesPerHour(), 'cookiesPerHour');
 
 capHill.render();
 
+
 //Alki Beach Location
 var alki = {
     name: ('Alki Beach'),
@@ -209,7 +208,6 @@ var alki = {
     maxCust: 16,
     avgCookie: 4.6,
     totalCookies: 0,
-
 
      generateRandom: function(min, max) {
         return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
