@@ -13,12 +13,11 @@ Location.list = [];
 
 Location.prototype.generateRandomNum = function(min, max) {
     return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust
-};
+}
 
-Location.prototype.cookiesPerHour = function () {
-    return Math.floor(this.generateRandom(this.minCust, this.maxCust)* this.avgCookie)
-};   
-
+Location.prototype.render = function() {
+    console.log(`${this.avgCookie * generateRandomNum}`)
+}
   
   new Location("Pike Place", 23, 65, 6.5);
   new Location("SeaTac Airport", 3, 24, 1.2);
@@ -26,6 +25,9 @@ Location.prototype.cookiesPerHour = function () {
   new Location("Capitol Hill", 20, 38, 2.3);
   new Location("Alki Beach", 2, 16, 4.6);
 
+  for (var i = 0; i < Location.list.length; i++){
+      Location.list[i].render();
+  }
 
 
   /*
