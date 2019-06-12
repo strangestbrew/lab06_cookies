@@ -7,23 +7,35 @@ function Location(name, minCust, maxCust, avgCookie) {
     this.minCust = minCust;
     this.maxCust = maxCust;
     this.avgCookie = avgCookie;
+    this.cookieData = [];
     Location.list.push(this);
 }
 Location.list = [];
 
-Location.prototype.generateRandomNum = function(min, max) {
-    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust
+
+Location.prototype.generateRandomNum = function () {
+
+
 }
 
-Location.prototype.render = function() {
-    console.log(`${this.avgCookie * generateRandomNum}`)
+
+Location.prototype.cookiesSoldProjection = function () {
+
+
 }
-  
-  new Location("Pike Place", 23, 65, 6.5);
-  new Location("SeaTac Airport", 3, 24, 1.2);
-  new Location("Seattle Center", 11, 38, 3.7);
-  new Location("Capitol Hill", 20, 38, 2.3);
-  new Location("Alki Beach", 2, 16, 4.6);
+
+
+
+
+
+
+
+
+  new Location("Pike Place", "23", "65", "6.5");
+  new Location("SeaTac Airport", "3", "24", "1.2");
+  new Location("Seattle Center", "11", "38", "3.7");
+  new Location("Capitol Hill", "20", "38", "2.3");
+  new Location("Alki Beach", "2", "16", "4.6");
 
   for (var i = 0; i < Location.list.length; i++){
       Location.list[i].render();
