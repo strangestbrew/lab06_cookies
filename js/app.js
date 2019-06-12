@@ -2,6 +2,26 @@
  
 var times = ["6 am", "7 am", "8 am", "9 am", "10 am", "11 am", "12 pm", "1 pm", "2 pm", "3 pm", "4 pm", "5 pm", "6 pm", "7 pm", "8 pm"];
 
+var locations = [];
+
+function Location(name, minCust, maxCust, avgCookie) {
+  this.name = name;
+  this.minCust = minCust;
+  this.maxCust = maxCust;
+  this.avgCookie = avgCookie;
+  locations.push(this);
+}
+
+new Location("Pike Place", 23, 65, 6.5);
+new Location("SeaTac Airport", 3, 24, 1.2);
+new Location("Seattle Center", 11, 38, 3.7);
+new Location("Capitol Hill", 20, 38, 2.3);
+new Location("Alki Beach", 2, 16, 4.6);
+
+for (var i = 0; i < locations.length; i++) {
+  console.log(locations[i].name);
+} 
+
 //1st and Pike Location
 var pike = {
     name: ('First and Pike'),
