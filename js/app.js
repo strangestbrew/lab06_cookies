@@ -2,26 +2,34 @@
  
 var times = ["6 am", "7 am", "8 am", "9 am", "10 am", "11 am", "12 pm", "1 pm", "2 pm", "3 pm", "4 pm", "5 pm", "6 pm", "7 pm", "8 pm"];
 
-var locations = [];
-
 function Location(name, minCust, maxCust, avgCookie) {
-  this.name = name;
-  this.minCust = minCust;
-  this.maxCust = maxCust;
-  this.avgCookie = avgCookie;
-  locations.push(this);
+    this.name = name;
+    this.minCust = minCust;
+    this.maxCust = maxCust;
+    this.avgCookie = avgCookie;
+    Location.list.push(this);
 }
+Location.list = [];
 
-new Location("Pike Place", 23, 65, 6.5);
-new Location("SeaTac Airport", 3, 24, 1.2);
-new Location("Seattle Center", 11, 38, 3.7);
-new Location("Capitol Hill", 20, 38, 2.3);
-new Location("Alki Beach", 2, 16, 4.6);
+Location.prototype.generateRandomNum = function(min, max) {
+    return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust
+};
 
-for (var i = 0; i < locations.length; i++) {
-  console.log(locations[i].name);
-} 
+Location.prototype.cookiesPerHour = function () {
+    return Math.floor(this.generateRandom(this.minCust, this.maxCust)* this.avgCookie)
+};   
 
+  
+  new Location("Pike Place", 23, 65, 6.5);
+  new Location("SeaTac Airport", 3, 24, 1.2);
+  new Location("Seattle Center", 11, 38, 3.7);
+  new Location("Capitol Hill", 20, 38, 2.3);
+  new Location("Alki Beach", 2, 16, 4.6);
+
+
+
+  /*
+  
 //1st and Pike Location
 var pike = {
     name: ('First and Pike'),
@@ -269,3 +277,4 @@ console.log(alki.generateRandom (alki.minCust, alki.maxCust), 'generateRandom');
 console.log(alki.cookiesPerHour(), 'cookiesPerHour');
 
 alki.render();
+*/
