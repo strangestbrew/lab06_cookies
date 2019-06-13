@@ -70,17 +70,13 @@ Location.prototype.cookieData = function () {
         tableBody.appendChild(tableRow);
     }
     
-    var createTable = function (){
-        for (let i = 0; i < Locations.list.length; i++) {
-            Locations.list[i].renderData();
-            tableCell = document.createElement('td');
-            tableCell.textContent = Location.list[i].cookieArray[i];
-            tableRow.appendChild(tableCell);
-            tableBody.appendChild(tableRow);
-        }
-    }   
-
 }
+
+
 
 Location.render();
 location.createTable.render();
+
+//eventListener 
+//<fieldset/>
+//form building
