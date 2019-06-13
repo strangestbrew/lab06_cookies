@@ -20,55 +20,8 @@ Screenshots
 (Include logo/demo screenshot etc.)
 
 Code Example
-//1st and Pike Location
-var pike = {
-    name: ('First and Pike'),
-    minCust: 23,
-    maxCust: 65,
-    avgCookie: 6.3,
-    totalCookies: 0,
 
 
-     generateRandom: function(min, max) {
-        return Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
-    },
-    
-    cookiesPerHour: function () {
-        return Math.floor(this.generateRandom(this.minCust, this.maxCust)* this.avgCookie)
-    },    
-
-    render: function () { 
-        var divElement = document.getElementById("store");
-        var newTitle = document.createElement("h2");
-        newTitle.textContent = this.name;
-        divElement.appendChild(newTitle);
-
-        var storeData = document.createElement('ul');
-        divElement.appendChild(storeData);
-        
-
-      for (var i=0; i < times.length; i++ ) {
-        console.log(`${times[i]}: ${this.cookiesPerHour()}`)
-        var hourData = document.createElement('li');
-        var cookiesSoldPerHour = this.cookiesPerHour();
-        hourData.textContent = `${times[i]}: ${cookiesSoldPerHour} cookies`;
-        storeData.appendChild(hourData);
-        this.totalCookies += cookiesSoldPerHour;
-        console.log(this.totalCookies);
-    }
-    
-    var showTotalCookies = document.createElement('li');
-    showTotalCookies.textContent = `Total: ${this.totalCookies} cookies`;
-    storeData.appendChild(showTotalCookies);
-       
-    }
-}
-
-console.log(pike.generateRandom (pike.minCust, pike.maxCust), 'generateRandom');
-
-console.log(pike.cookiesPerHour(), 'cookiesPerHour');
-
-pike.render();
 
 
 Installation
