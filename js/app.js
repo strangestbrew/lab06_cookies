@@ -53,19 +53,34 @@ Location.prototype.cookieData = function () {
      }
      tableBody.appendChild(tableRow);
 
-     tableCell.textContent = '';    
+     tableCell = document.createElement('td');
+     tableCell.textContent = 'Total';    
      tableRow.appendChild(tableCell);
 
- }
+     tableRow = document.createElement('tr');
+     tableCell = document.createElement('td');
+     tableCell.textContent = Location.list[0].name;
+     tableRow.appendChild(tableCell);
+     tableBody.appendChild(tableRow);
 
- Location.render = function () {
-    for (var i = 0; i < this.cookieArray.length; i++){
+     for (var i = 0; i < times.length; i++){
         tableCell = document.createElement('td');
-        tableCell.textContent = this.cookieArray[i];
+        tableCell.textContent = Location.list[0].cookieArray[i];
         tableRow.appendChild(tableCell);
+        tableBody.appendChild(tableRow);
     }
+    
+    var createTable = function (){
+        for (let i = 0; i < Locations.list.length; i++) {
+            Locations.list[i].renderData();
+            tableCell = document.createElement('td');
+            tableCell.textContent = Location.list[i].cookieArray[i];
+            tableRow.appendChild(tableCell);
+            tableBody.appendChild(tableRow);
+        }
+    }   
+
 }
 
-
-
 Location.render();
+location.createTable.render();
