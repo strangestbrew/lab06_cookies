@@ -84,3 +84,7 @@ Location.prototype.cookieData = function () {
 
 Location.render();
 location.createTable.render();
+
+//eventListener 
+//<fieldset/>
+//form building
