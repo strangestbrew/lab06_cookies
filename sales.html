@@ -16,36 +16,64 @@
 
 
     <main>
-        <table id ="sales-data">
+        <section id ="store-table">
+            <table id ="sales-data">
             
-            <thead id = "timeData">
+             <thead id = "timeData">
              
-                <tr id = "header-row">
+                    <tr id = "header-row">
              
-                    <th></th>
+                        <th></th>
                    
-                </tr>
+                    </tr>
            
-            </thead>
+                </thead>
             
-            <tbody id = "table-body">
+                <tbody id = "table-body">
             
-                <tr>
+                 <tr>
               
-                    <td>
+                     <td>
                         
-                    </td>
+                     </td>
 
-                </tr>
+                  </tr>
             
-            </tbody>
+                 </tbody>
             
-            <tfoot id = "table-foot">
+                 <tfoot id = "table-foot">
 
-            </tfoot>
+                </tfoot>
         
-        </table>
-         
+            </table>
+
+            <section id="store">
+
+                    <table>
+              
+                      <thead id="franchiseHead"></thead>
+              
+                      <tbody id="franchisesData"></tbody>
+              
+                      <tfoot id="franchiseHourlyTotals"></tfoot>
+              
+                    </table>
+              
+            <form id = "locationForm">
+                <fieldset>
+                    <legend>New Location Form</legend>
+                    <input id = "storeName" name = "addName" type = "text" placeholder = "Store Location"/>
+                    <input id = "newMinCust" name = "addMinCust" type = "number" placeholder = "Min"/>
+                    <input id = "newMaxCust" name = "addMaxCust" type = "number" placeholder = "Max"/>
+                    <input id = "newAvgCust" name = "addAveCust" type = "number" placeholder = "Average"/>
+                    <button id = "submit" type="submit" name = "submitNewFran" value = "Add Location">Add Location</button>
+                </fieldset>
+              
+            </form>
+              
+                </section>
+
+        </section>
     </main>
 
     <footer> &copy; Pat's Salmon Cookies LLC </footer>
