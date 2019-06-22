@@ -38,4 +38,50 @@ new Outlet('Capitol Hill', 20, 38, 2.3);
 new Outlet('Alki Beach', 2, 16, 4.6);
 
 
+//render the empty table
+Outlet.prototype.render = function () {
+  var tableBody = document.getElementById('table-body');
+  var tableRow = document.createElement('tr');
+  var cell = document.createElement('td');
+  cell.textContent = this.name;
+  tableRow.appendChild(cell);
+
+  for (var i = 0; i < this.cookieArray.length; i++) {
+    cell = document.createElement('td');
+    cell.textContent = this.cookieArray[i];
+    tableRow.appendChild(cell);
+  }
+  cell = document.createElement('td');
+  cell.textContent = this.dayTotal;
+  tableRow.appendChild(cell);
+
+  tableBody.appendChild(tableRow);
+};
+
+var renderTimes = function () {
+  var tableHead = document.getElementById('timeData');
+  var tableRow = document.createElement('tr');
+
+  var cell = document.createElement('th');
+  cell.textContent = '';
+  tableRow.appendChild(cell);
+
+  for (var i = 0; i < times.length; i++) {
+    cell = document.createElement('th');
+    cell.textContent = times[i];
+    tableRow.appendChild(cell);
+    tableHead.appendChild(tableRow);
+  }
+
+  cell = document.createElement('th');
+  cell.textContent = 'Daily Total';
+  tableRow.appendChild(cell);
+};
+
+//render table head
+renderTimes(times);
+//render table body
+for (var i = 0; i < Outlet.list.length; i++) {
+  Outlet.list[i].render();
+}
 
