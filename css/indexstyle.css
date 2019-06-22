@@ -1,0 +1,72 @@
+body {
+  background: #DCDBD6;
+  background-image: url(/images/pike_place_market.jpg);
+  color: #2A3629;
+  font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+header {
+  margin: 20px;
+  border: 20px;
+  padding: 20px;
+}
+
+main {
+  margin: auto;
+  border: 20px;
+  padding: 20px; 
+  border: solid #2A3629 5px;
+  height: 500px;
+  width: 60%;
+  position: relative;
+
+}
+
+footer {
+  margin: 20px;
+  border: 20px;
+  padding: 20px;
+  }
+
+
+#scroll-text {
+  font-family: 'Bitter', serif;
+  font-size: 50px;
+  text-align: center; 
+}
+
+
+#brand-text {
+  font-family: 'Bitter', serif;
+  position: relative;
+  bottom: 0; 
+  text-align: center;
+  padding: 15px; 
+}
+
+nav {
+display: inline-block;
+margin: 5px;
+border; 5px;
+padding; 5px;
+padding-top: 100px;
+}
+
+
+ #locations{
+   border: 5px;
+   padding: 5px;
+   margin: 5px;
+
+ }
+
+ #hours {
+ 
+ }
+
+ #contact {
+   float: right;
+
+ }
+
+ 
