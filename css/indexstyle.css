@@ -1,6 +1,5 @@
 body {
   background: #DCDBD6;
-  background-image: url(/images/pike_place_market.jpg);
   color: #2A3629;
   font-family: Georgia, 'Times New Roman', Times, serif
 }
@@ -17,9 +16,8 @@ main {
   padding: 20px; 
   border: solid #2A3629 5px;
   height: 500px;
-  width: 60%;
+  width: 75%;
   position: relative;
-
 }
 
 footer {
@@ -35,6 +33,13 @@ footer {
   text-align: center; 
 }
 
+.pat_logo{
+  margin: 10px;
+  border: 10px; 
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+}
 
 #brand-text {
   font-family: 'Bitter', serif;
@@ -45,28 +50,50 @@ footer {
 }
 
 nav {
-display: inline-block;
-margin: 5px;
-border; 5px;
-padding; 5px;
-padding-top: 100px;
+  display: inline-block;
+  margin: 5px;
+  border: 5px;
+  padding: 5px;
+  padding-top: 100px;
+  text-align: right;
+}
+
+p {
+  text-align: center;
+  font-family: 'Bitter', serif;
+  font-size: 25px;
 }
 
 
- #locations{
-   border: 5px;
-   padding: 5px;
-   margin: 5px;
+ ul {
+  display: inline;
 
  }
 
- #hours {
- 
- }
+ li > img {
+  display: flex; 
+  object-fit: contain;
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+  padding: 10px; 
+}
 
- #contact {
-   float: right;
+h1 > img {
+  height: 100px;
+  width: 100px; 
+  float: center; 
+}
 
- }
+h1 {
+  font-family: 'Bitter', serif;
+  position: relative;
+  bottom: 0; 
+  text-align: center;
+  padding: 15px; 
+}
 
- 
+h7 > img {
+  height: 50px;
+  width: 50px;
+}
