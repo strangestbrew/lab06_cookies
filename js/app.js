@@ -61,13 +61,30 @@ Outlet.prototype.render = function () {
   tableBody.appendChild(tableRow);
 };
 
-var renderTimes = function () {
+//render table body, blank
+for (var i = 0; i < Outlet.list.length; i++) {
+  Outlet.list[i].render();
+}
+
+
+
+
+
+
+
+
+//test code
+//Renders the empty cell, hours, then Total header for the table
+
+var cookiesByHour = [];
+
+var renderHours = function() {
   var tableHead = document.getElementById('timeData');
   var tableRow = document.createElement('tr');
-
   var cell = document.createElement('th');
   cell.textContent = '';
   tableRow.appendChild(cell);
+  tableHead.appendChild(tableRow);
 
   for (var i = 0; i < times.length; i++) {
     cell = document.createElement('th');
@@ -75,24 +92,98 @@ var renderTimes = function () {
     tableRow.appendChild(cell);
     tableHead.appendChild(tableRow);
   }
-
   cell = document.createElement('th');
-  cell.textContent = 'Daily Total';
+  cell.textContent = 'Total';
   tableRow.appendChild(cell);
+  tableHead.appendChild(tableRow);
 };
 
-//render table head with times
-renderTimes(times);
-//render table body, blank
-for (var i = 0; i < Outlet.list.length; i++) {
-  Outlet.list[i].render();
+//Renders the cookie data for each location for the table
+
+Outlet.prototype.render = function () {
+  var tableBody = document.getElementById('table-body');
+  var tableRow = document.createElement('tr');
+  var cell = document.createElement('td');
+  cell.textContent = this.location;
+  tableRow.appendChild(cell);
+
+  for (var i = 0; i < times.length; i++) {
+    cell = document.createElement('td');
+    cell.textContent = this.cookieArray[i];
+    tableRow.appendChild(cell);
+  }
+  cell = document.createElement('td');
+  cell.textContent = this.totalDaysCookies;
+  tableRow.appendChild(cell);
+  tableBody.appendChild(tableRow);
+};
+
+//Renders the totals by hour, sums, then total of the franchise totals
+
+var tableFooter = document.getElementById('table-foot');
+var totalByHourRender = function() {
+  var tableRow = document.createElement('tr');
+
+  var cell = document.createElement('td');
+  cell.textContent ='Hourly Totals';
+  tableRow.appendChild(cell);
+
+  for (var i = 0; i < times.length; i++) {
+    cell = document.createElement('td');
+    cell.textContent = cookiesByHour[i];
+    tableRow.appendChild(cell);
+  }
+  cell = document.createElement('td');
+  cell.textContent = '';
+  tableRow.appendChild(cell);
+  tableFooter.appendChild(tableRow);
+};
+
+//calculating the total cookies by hour
+
+var outletSums = [];
+
+function totalStoreSums () {
+  for (var i = 0; i < times.length; i++) {
+    var hourSum = 0;
+    for (var j = 0; j < outletSums.length; j++) {
+      hourSum += outletSums[j].cookieArray[i];
+    }
+    cookiesByHour.push(hourSum);
+  }
 }
+
+totalStoreSums();
+
+var pageUpdate = function() {
+  for (var i = 0; i < outletSums.length; i++) {
+    outletSums[i].render();
+  }
+};
+
+totalByHourRender();
+pageUpdate();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //events
 var form = document.getElementById('locationForm');
 
 form.addEventListener ('submit', addNewLocation);
-
 
 function addNewLocation (event) {
   event.preventDefault();
@@ -106,47 +197,5 @@ function addNewLocation (event) {
   Outlet.list[Outlet.list.length-1].render();
 }
 
-//create totals column for total cookies per day
+renderHours();
 
-var renderTotal = function () {
-  var tableFoot = document.getElementById('table-foot');
-  var tableRow = document.createElement('tr');
-
-  var cell = document.createElement('td');
-  cell.textContent = ('Totals');
-  tableRow.appendChild(cell);
-
-  for (var i = 0; i < hourTotals.length; i++) {
-    cell = document.createElement('td');
-    cell.textContent = hourTotals;
-    tableRow.appendChild(cell);
-    tableFoot.appendChild(tableRow);
-  }
-};
-
-var renderFooter = function () {
-  var tableFoot = document.getElementById('table-foot');
-  var tableRow = document.createElement('tr');
-
-  var cell = document.createElement('td');
-  cell.textContent = 'Total';
-  tableRow.appendChild(cell);
-
-  for (var i = 0; i < times.length; i++) {
-    cell = document.createElement('td');
-    cell.textContent = hourTotals[i];
-    tableRow.appendChild(cell);
-  }
-  var allCookies = 0;
-  for ( var j = 0; j < hourTotals.length; j++){
-    allCookies += hourTotals[j];
-  }
-  cell = document.createElement('td');
-  cell.textContent = allCookies;
-  tableRow.appendChild(cell);
-  console.log(hourTotals);
-  tableFoot.appendChild(tableRow);
-};
-
-
-renderFooter (hourTotals[i]);
