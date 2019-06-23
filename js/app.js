@@ -66,14 +66,6 @@ for (var i = 0; i < Outlet.list.length; i++) {
   Outlet.list[i].render();
 }
 
-
-
-
-
-
-
-
-//test code
 //Renders the empty cell, hours, then Total header for the table
 
 var cookiesByHour = [];
@@ -163,21 +155,6 @@ var pageUpdate = function() {
 
 totalByHourRender();
 pageUpdate();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //events
